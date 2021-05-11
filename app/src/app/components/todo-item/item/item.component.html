@@ -1,1 +1,14 @@
-<p>item works!</p>
+<div [ngClass]="setItems()">
+    <p>
+      <input
+        (change)="onToggle(todo)"
+        type="checkbox"
+        id="{{ todo.id }}"
+        [checked]="todo.completed"
+      />
+      <label for="{{ todo.id }}">
+        {{ todo.title }}
+      </label>
+      <button (click)="onDelete(todo)" class="del">X</button>
+    </p>
+  </div>
