@@ -9,6 +9,8 @@
       <label for="{{ todo.id }}">
         {{ todo.title }}
       </label>
+      <button (click)="onTrue(true)">True</button>
+      <button (click)="onFalse(false)">False</button>
       <button (click)="onDelete(todo)" class="del">X</button>
     </p>
   </div>

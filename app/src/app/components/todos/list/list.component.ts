@@ -34,4 +34,15 @@ export class ListComponent implements OnInit {
       this.todos.push(todo);
     });
   }
+
+  filteringTodo(filter: boolean){
+    this.todoService.getTodosTrueFalseComplete(filter).subscribe(todos => {
+      this.todos=todos;
+    });
+  }
+  allTodo(){
+    this.todoService.getTodos().subscribe(todos => {
+      this.todos = todos;
+    });
+  }
 }

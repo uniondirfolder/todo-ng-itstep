@@ -11,6 +11,9 @@ export class ItemComponent implements OnInit {
 
   @Input() todo: Todo = new Todo();
   @Output() deleteTodo: EventEmitter<Todo> = new EventEmitter();
+  @Output() filter: EventEmitter<boolean> = new EventEmitter();
+
+  
 
   constructor(private todoService: TodoService) { }
 
@@ -36,5 +39,12 @@ export class ItemComponent implements OnInit {
 
   onDelete(todo: Todo) {
     this.deleteTodo.emit(todo);
+  }
+
+  onTrue(value: boolean){
+    this.filter.emit(value)
+  }
+  onFalse(value: boolean){
+    this.filter.emit(value)
   }
 }

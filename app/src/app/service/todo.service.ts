@@ -16,7 +16,7 @@ export class TodoService {
 
   todosUrl: string = 'https://jsonplaceholder.typicode.com/todos'; // тянем отсюда json
   todosLimit = '?_limit=10'; // по 10 шт
-
+  filteringByComplete = '&completed=';
   constructor(private http: HttpClient) { }
 
   
@@ -39,5 +39,9 @@ export class TodoService {
   toggleCompleted(todo: Todo):Observable<any> {
     const url = `${this.todosUrl}/${todo.id}`;
     return this.http.put(url, todo, httpOptions);
+  }
+
+  getTodosTrueFalseComplete(completed: boolean):Observable<Todo[]>{
+    return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}${this.filteringByComplete}${completed}`);
   }
 }
