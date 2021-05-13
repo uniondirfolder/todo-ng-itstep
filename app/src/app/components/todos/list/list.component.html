@@ -1,8 +1,8 @@
 <app-add (addTodo)="addTodo($event)"></app-add>
+<app-filter (filter)="filteringTodo($event)"></app-filter>
 <app-item 
   *ngFor="let todo of todos" 
   [todo]="todo"
   (deleteTodo)="deleteTodo($event)"
-  (filter)="filteringTodo($event)"
   >
 </app-item>

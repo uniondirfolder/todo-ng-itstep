@@ -40,9 +40,5 @@ export class ListComponent implements OnInit {
       this.todos=todos;
     });
   }
-  allTodo(){
-    this.todoService.getTodos().subscribe(todos => {
-      this.todos = todos;
-    });
-  }
+
 }

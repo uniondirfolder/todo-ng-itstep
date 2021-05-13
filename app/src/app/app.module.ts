@@ -10,6 +10,7 @@ import { AddComponent } from './components/add-todo/add/add.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/layout/header/header.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HeaderComponent } from './components/layout/header/header.component';
     ListComponent,
     AboutComponent,
     AddComponent,
-    HeaderComponent
+    HeaderComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
